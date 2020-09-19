@@ -12,7 +12,7 @@ foreach ($data as $x) {
 }
 if ($shouldInsert) {
   try {
-    $pdo = require './_.php';
+    $pdo = require_once './_.php';
     $stmt = $pdo->prepare('UPDATE `GlobalTest` SET `ParagraphOne` = ?, `SectionOne` = ?, `ParagraphTwo` = ?, `SectionTwo` = ?, `ParagraphThree` = ?, `SectionThree` = ? WHERE `ID` = ?');
     $stmt->execute(array_merge($data, [$id]));
     http_response_code(201);

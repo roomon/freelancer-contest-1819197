@@ -1,7 +1,7 @@
 <?php
 
 try {
-  $pdo = require './_.php';
+  $pdo = require_once './_.php';
   $rows = $pdo->query('SELECT `ID` FROM `GlobalTest`');
   $ids = [];
   foreach ($rows as $row) {

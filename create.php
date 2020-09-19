@@ -11,7 +11,7 @@ foreach ($data as $x) {
 }
 if ($shouldInsert) {
   try {
-    $pdo = require './_.php';
+    $pdo = require_once './_.php';
     $stmt = $pdo->prepare('INSERT INTO `GlobalTest` (`ParagraphOne`, `SectionOne`, `ParagraphTwo`, `SectionTwo`, `ParagraphThree`, `SectionThree`) VALUES (?, ?, ?, ?, ?, ?)');
     $stmt->execute($data);
     http_response_code(201);
